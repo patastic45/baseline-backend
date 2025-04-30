@@ -1,0 +1,57 @@
+# requirements.txt (for deployment - TensorFlow and other offline dependencies removed)
+
+# Flask Core & Web Server
+Flask==3.1.0
+gunicorn==23.0.0
+Werkzeug==3.1.3
+Jinja2==3.1.6
+itsdangerous==2.2.0
+click==8.1.8
+blinker==1.9.0
+MarkupSafe==3.0.2
+
+# Database (PostgreSQL)
+Flask-SQLAlchemy==3.1.1
+SQLAlchemy==2.0.40
+psycopg2-binary==2.9.10
+
+# API Clients & Auth
+spotipy==2.25.1
+googlemaps==4.10.0
+requests==2.32.3
+requests-oauthlib==2.0.0
+oauthlib==3.2.2
+
+# CORS
+flask-cors==5.0.1
+
+# NLP/Data (Needed at RUNTIME)
+nltk==3.9.1 # For stopwords and potentially VADER if used elsewhere
+numpy # Let pip choose compatible version
+pandas==2.2.3 # Needed for loading music CSV in Main.py
+regex==2024.11.6 # For fallback tokenizer
+annotated-types==0.7.0 # pydantic dep
+typing-inspection==0.4.0 # pydantic dep
+
+# Utilities & Dependencies
+python-dotenv==1.1.0
+certifi==2025.1.31
+charset-normalizer==3.4.1
+idna==3.10
+importlib_metadata==8.6.1
+importlib_resources==6.5.2
+packaging==24.2
+pyparsing==3.2.3
+python-dateutil==2.9.0.post0 # pandas dep
+pytz==2025.1 # pandas dep
+six==1.17.0
+typing-extensions==4.12.2 # Keep, needed by many libs including pydantic
+tzdata==2025.1 # pandas dep
+urllib3==2.3.0
+zipp==3.21.0
+async-timeout==5.0.1 # Check if needed by requests/aiohttp? Likely safe to keep.
+language_data==1.3.0 # Check if needed by nltk? Likely safe to keep.
+scipy==1.13.1 # Often needed by numpy/pandas - Keep for now unless proven unnecessary
+smart-open==7.1.0 # Check if needed by pandas/numpy? Keep for now.
+
+
